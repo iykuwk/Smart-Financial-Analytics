@@ -1,0 +1,425 @@
+# Smart Financial Planning Analytics
+
+## Case Study
+
+---
+
+# Project Overview
+
+This project demonstrates the design and development of an enterprise Financial Planning & Analysis (FP&A) solution using Microsoft Power BI, Python, Excel, Power Query, and DAX.
+
+The objective was to simulate a multinational organization's budgeting and financial planning process by generating realistic financial transactions and transforming them into an interactive executive reporting solution.
+
+The completed solution provides finance teams with the ability to monitor financial performance, analyse variances, evaluate forecasts, and investigate transactions through a modern business intelligence dashboard.
+
+---
+
+# Business Problem
+
+Finance departments often spend significant time preparing reports from multiple spreadsheets before management meetings.
+
+Common challenges include:
+
+- Budget overruns identified too late
+- Manual budget consolidation
+- Limited visibility into departmental spending
+- Difficulty analysing General Ledger activity
+- Poor forecasting visibility
+- Time-consuming variance investigations
+- Limited executive self-service reporting
+
+These challenges delay decision-making and reduce the ability of management to respond quickly to financial risks.
+
+---
+
+# Project Objectives
+
+The project was designed to achieve the following objectives:
+
+- Automate financial dataset generation
+- Build a scalable dimensional data model
+- Create executive financial dashboards
+- Monitor Budget vs Actual performance
+- Analyse Forecast Accuracy
+- Measure Budget Utilization
+- Monitor Department performance
+- Analyse General Ledger spending
+- Enable transaction-level drill-through
+- Demonstrate professional Power BI development practices
+
+---
+
+# Solution Architecture
+
+The solution follows a modern analytics workflow.
+
+```
+Python
+        │
+        ▼
+
+Synthetic Financial Dataset
+
+        │
+        ▼
+
+Excel Data Sources
+
+        │
+        ▼
+
+Power Query
+
+        │
+        ▼
+
+Star Schema Data Model
+
+        │
+        ▼
+
+DAX Measures
+
+        │
+        ▼
+
+Interactive Power BI Dashboard
+```
+
+---
+
+# Technology Stack
+
+The project uses the following technologies:
+
+- Microsoft Power BI Desktop
+- Microsoft Excel
+- Python
+- Pandas
+- NumPy
+- Power Query
+- DAX
+- Star Schema Modelling
+- GitHub
+- Markdown Documentation
+
+---
+
+# Dataset Design
+
+A synthetic financial dataset was generated using Python to simulate real-world Financial Planning & Analysis (FP&A) activities.
+
+The final dataset contains approximately:
+
+| Attribute | Value |
+|-----------|------:|
+| Transactions | 5,000 |
+| Reporting Period | January 2025 – December 2026 |
+| Business Entities | 5 |
+| Departments | 10 |
+| Cost Centres | 10 |
+| General Ledger Accounts | 14 |
+| Financial Scenarios | Budget, Actual, Forecast |
+
+The dataset includes realistic spending behaviour across departments and business entities, allowing meaningful financial analysis.
+
+---
+
+# Data Model
+
+The dashboard uses a Star Schema to improve performance and simplify reporting.
+
+## Fact Table
+
+### Financial Transactions
+
+Contains:
+
+- Transaction ID
+- Date
+- Entity
+- Department
+- Cost Centre
+- GL Account
+- Budget
+- Actual
+- Forecast
+- Variance
+- Variance %
+- Currency
+- Scenario
+
+## Dimension Tables
+
+- Calendar
+- Entities
+- Departments
+- Cost Centres
+- GL Accounts
+
+This modelling approach reduces redundancy while supporting efficient filtering and DAX calculations.
+
+---
+
+# Python Data Generation
+
+Rather than using publicly available datasets, this project includes a Python-based generator that automatically creates realistic financial planning data.
+
+The generator produces:
+
+- Budget values
+- Actual expenditure
+- Forecast values
+- Variance calculations
+- Variance percentages
+- Department-specific spending behaviour
+- Entity-specific spending patterns
+- Monthly seasonality
+- Financial scenarios
+
+Lookup tables are also generated automatically for:
+
+- Business Entities
+- Departments
+- Cost Centres
+- General Ledger Accounts
+
+This approach makes the project repeatable and easy to extend.
+
+---
+
+# Financial Scenarios
+
+Each transaction belongs to one of three reporting scenarios:
+
+## Budget
+
+Represents the approved planned expenditure before the reporting period.
+
+## Actual
+
+Represents the recorded financial performance.
+
+## Forecast
+
+Represents the projected financial position based on current performance and expected future activity.
+
+These scenarios support comparison between planned, realised, and expected performance.
+
+---
+
+# Dashboard Design
+
+The solution is organised into six analytical pages.
+
+## Page 1 — Executive Financial Overview
+
+Provides a high-level summary of organisational financial performance through executive KPIs and visual trends.
+
+Key features include:
+
+- Budget vs Actual vs Forecast
+- Variance Trend
+- Department Spending
+- Entity Spending
+- GL Account Allocation
+- Scenario Distribution
+
+---
+
+## Page 2 — Budget Performance
+
+Focuses on budget execution across departments and entities.
+
+Key visuals include:
+
+- Monthly Budget vs Actual
+- Department Variance
+- Budget Performance Table
+- Variance Waterfall
+
+---
+
+## Page 3 — Department Analysis
+
+Analyses departmental spending patterns and utilisation.
+
+Key visuals include:
+
+- Department Budget Trends
+- Budget Utilisation
+- GL Account Spending
+- Department Variance
+- Department Detail Table
+
+---
+
+## Page 4 — GL Account Analysis
+
+This page focuses on expenditure at the General Ledger (GL) account level.
+
+Key visualisations include:
+
+- Actual Spend by GL Account
+- Budget vs Actual Comparison
+- Variance by GL Account
+- Monthly GL Account Trends
+- Detailed GL Account Table
+
+Business Value:
+
+Finance teams can quickly identify which expense categories are driving organisational spending and investigate significant budget variances.
+
+---
+
+## Page 5 — Forecast & Variance Analysis
+
+This page evaluates forecasting accuracy and highlights financial variances.
+
+Key visualisations include:
+
+- Forecast Accuracy Trend
+- Monthly Variance Trend
+- Variance by Entity
+- Department Variance Waterfall
+- Forecast vs Actual Scatter Plot
+- Variance Detail Table
+
+Business Value:
+
+Supports proactive financial management by identifying emerging risks, improving forecast quality, and highlighting areas requiring management attention.
+
+---
+
+## Page 6 — Transaction Explorer
+
+The final page provides transaction-level visibility for finance analysts.
+
+Key visualisations include:
+
+- Monthly Transaction Volume
+- Largest Financial Transactions
+- Transaction Detail Table
+- Interactive slicers for investigation
+
+Business Value:
+
+Enables users to drill from executive summaries into individual transactions, supporting financial reviews, reconciliations, and audit activities.
+
+---
+
+# Business Insights
+
+The completed dashboard enables users to answer important financial questions such as:
+
+- Are we operating within budget?
+- Which departments are overspending?
+- Which entities contribute most to organisational expenditure?
+- Which GL accounts consume the largest share of the budget?
+- How accurate are our forecasts?
+- Where are the largest financial variances?
+- Which transactions require further investigation?
+
+Instead of manually reviewing spreadsheets, users can answer these questions through interactive dashboards.
+
+---
+
+# Challenges Encountered
+
+During development several technical challenges were addressed.
+
+### Data Generation
+
+The initial synthetic dataset produced budget, actual, and forecast values that were too similar, limiting the usefulness of variance analysis.
+
+The Python generator was redesigned to introduce:
+
+- Department-specific financial behaviour
+- Entity spending profiles
+- Monthly seasonality
+- Realistic forecast calculations
+- Meaningful financial variances
+
+### Data Modelling
+
+Relationships between the fact table and dimension tables were refined using a Star Schema to improve report performance and simplify filtering.
+
+### Dashboard Design
+
+Several iterations were completed to improve:
+
+- KPI selection
+- Visual layout
+- Colour consistency
+- Navigation
+- Executive readability
+
+These refinements resulted in a cleaner and more business-focused reporting experience.
+
+---
+
+# Lessons Learned
+
+This project reinforced several best practices.
+
+- Build a clean dimensional model before creating visuals.
+- Create reusable DAX measures instead of duplicating calculations.
+- Generate realistic datasets that tell a business story.
+- Design dashboards for decision-making rather than displaying as many visuals as possible.
+- Develop documentation alongside the technical solution.
+
+These practices improve maintainability and make dashboards easier for end users to understand.
+
+---
+
+# Future Enhancements
+
+Potential future improvements include:
+
+- Rolling forecasts
+- Multi-year financial planning
+- Profit & Loss dashboard
+- Balance Sheet dashboard
+- Cash Flow forecasting
+- Scenario planning (Best, Base, Worst)
+- Currency conversion using live exchange rates
+- Row-Level Security (RLS)
+- Power BI Service deployment with scheduled refresh
+- AI-assisted forecasting models
+
+---
+
+# Project Outcome
+
+The completed solution demonstrates an end-to-end Financial Planning & Analysis workflow.
+
+The project combines:
+
+- Python data generation
+- Excel data management
+- Power Query transformations
+- Star Schema modelling
+- DAX calculations
+- Executive dashboard design
+- Financial performance analysis
+- Professional GitHub documentation
+
+The result is a practical FP&A analytics solution suitable for portfolio demonstration, technical interviews, and further extension into enterprise finance reporting.
+
+---
+
+# Conclusion
+
+This project represents the third major solution in a broader Finance Analytics portfolio.
+
+Completed projects include:
+
+- Accounts Payable Analytics
+- Procurement Analytics
+- Smart Financial Planning & Analysis (FP&A)
+
+The next planned project is:
+
+- Smart Accounts Receivable Analytics
+
+Together, these projects demonstrate the ability to design, build, and document complete analytics solutions that support operational finance, financial planning, and executive decision-making.
